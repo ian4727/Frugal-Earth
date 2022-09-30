@@ -54,6 +54,9 @@
         <img src="image/globelogo.png" class="img-responsive center-block d-block mx-auto img-fluid mt-5">
         <h4 class="p-3 mb-0 text-center">Sign Up to FrugalEarth</h4>
 
+
+      <form method = "POST" action"">
+        {% csrf_token %}
       <form class="bg-dark text-white p-3 rounded border border-dark">
         <div class="row">
             <div class="col">
@@ -79,6 +82,7 @@
         <input type="password" class="form-control bg-dark border border-secondary text-white" id="password" aria-describedby="emailHelp">
     
         <button type="submit" class="btn btn-success w-100 mt-3">Create Account</button>
+      </form>
       </form>
 
 
