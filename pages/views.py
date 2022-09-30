@@ -24,9 +24,9 @@ def signin(request):
 
         email= authenticate(request, email=email, password=password)
 
-        if email is not None:
-            login(request, email)
-            return redirect('home')
+        #if email is not None:
+            #login(request, email)
+            
 
     context = {} 
     return render(request, "signin.html", context)    
