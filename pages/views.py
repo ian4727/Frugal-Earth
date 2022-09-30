@@ -13,16 +13,16 @@ def home(request, *args, **kwargs):
     return render(request, "index.html", {})
 
 def signin(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
+    #if request.method == 'POST':
+        #email = request.POST.get('email')
+        #password = request.POST.get('password')
 
-        try:
-            email = email.objects.get(email=email)
-        except:
-            messages.error(request, 'User does not exist')   
+        #try:
+         #   email = email.objects.get(email=email)
+        #except:
+         #   messages.error(request, 'User does not exist')   
 
-        email= authenticate(request, email=email, password=password)
+        #email= authenticate(request, email=email, password=password)
 
         #if email is not None:
             #login(request, email)
