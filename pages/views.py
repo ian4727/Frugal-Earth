@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -9,27 +9,32 @@ from .models import Posts
 def home(request, *args, **kwargs):
     print(args, kwargs)
     print(request.user)
-    #return HttpResponse ("<h1>hello</h1>")
     return render(request, "index.html", {})
 
 def signin(request):
-    #if request.method == 'POST':
-        #email = request.POST.get('email')
-        #password = request.POST.get('password')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-        #try:
-         #   email = email.objects.get(email=email)
-        #except:
-         #   messages.error(request, 'User does not exist')   
+        try:
+           user = User.objects.get(username=username)
+        except:
+           messages.error(request, 'User does not exist')   
 
-        #email= authenticate(request, email=email, password=password)
+        user= authenticate(request, username=username, password=password)
 
-        #if email is not None:
-            #login(request, email)
-            
+        if user is not None:
+           login(request, user)
+           return redirect('home')
+        else:
+            messages.error(request, 'Username or Password does not exist')
 
     context = {} 
     return render(request, "signin.html", context)    
+
+def signout(request):
+    logout(request)
+    return redirect('home')    
 
 def signup(request):
     context = {}
