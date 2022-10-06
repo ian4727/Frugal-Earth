@@ -16,13 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from pages import views
+from django.http import HttpResponse
+
+#def home(request):
+ #   return HttpResponse('H')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('home/', views.home, name='home'),
-    path('signin/', views.signin, name='signin'),
-    path('signout/', views.signout, name='signout'),
-    path('signup/', views.signup, name='signup'),
+    path('', include('pages.urls')),
 ]

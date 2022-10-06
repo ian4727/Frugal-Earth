@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class Posts(models.Model):
     title = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
-    quantity = models.SmallIntegerField(max_length=200)
+    quantity = models.CharField(max_length=1000)
     size = models.CharField (max_length=200)
     condition = models.CharField(max_length=200)
     notes = models.CharField(max_length=1000)
