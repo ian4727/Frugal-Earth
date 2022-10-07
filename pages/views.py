@@ -12,6 +12,9 @@ from .forms import CreateUserForm
 def home(request):
     return render(request, 'pages/index.html')
 
+def feeds(request):
+    return render(request, 'pages/feed.html')    
+
 def signin(request):
     if request.method == 'POST':
         username = request.POST.get('username').lower()
@@ -26,7 +29,7 @@ def signin(request):
 
         if user is not None:
            login(request, user)
-           return redirect('home')
+           return redirect('feeds')
         else:
             messages.error(request, 'Invalid username or Password')
     return render(request, 'pages/signin.html')    
@@ -47,7 +50,7 @@ def signup(request):
             user.username = user.username.lower()
             user.save()
             login(request, user)
-            return redirect('home')
+            return redirect('feeds')
         else:
             messages.error(request, 'An error occured during registration')
             
