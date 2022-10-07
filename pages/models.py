@@ -23,15 +23,7 @@ class Posts(models.Model):
     def __str__ (self):
         return self.title
 
-#    class Message(models.Model):
-#    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-#    posts = models.ForeignKey(Posts, on_delete=models.SET_NULL, null=True)
-#    body = models.TextField()
-#    updated = models.DateTimeField(auto_now=True)
-#    created = models.DateTimeField(auto_now_add=True)
 
-#    def __str__(self):
-#        return self.body[0:50]
 
 class Category(models.Model):   
     title = models.CharField(max_length=200)
