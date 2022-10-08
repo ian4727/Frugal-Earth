@@ -300,3 +300,47 @@ margin: .25rem;
     border-color: var(--color-primary);
     border-width: 2px;
 }
+
+/*this is the edit-profile*/
+.edit-page{
+    background: var(--color-white);
+    display: flex;
+    margin-top: 3rem;
+    border-radius: var(--border-radius);
+}
+
+
+.edit-account{
+    width: max-content;
+    justify-items: auto;
+}
+
+
+.acc-photo{
+    width: 5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    border: 3px solid var(--color-primary);
+}
+
+.edit-info{
+    text-align: left;
+}
+
+.acc-preview{
+    text-align: center;
+}
+
+.modal-dialog{
+ width: 450px;  
+} 
+
+.modal-dialog label{
+    font-size: 13px;
+}
+
