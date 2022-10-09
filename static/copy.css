@@ -193,7 +193,7 @@ main .container .left .profile{
 .left .sidebar i{
     font-size: 1.4rem;
     color: var(--color-gray);
-    margin-left: 2rem;
+    margin-left: 1rem;
     position: relative;
 }
 

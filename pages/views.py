@@ -1,21 +1,42 @@
 from django.shortcuts import render, redirect
+from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from .models import Posts
+from .models import Room, Category, Message
+from .forms import RoomForm
 from .forms import CreateUserForm
+
+
 
 # Create your views here.
 def home(request):
+    #context = {'posts': posts}
     return render(request, 'pages/index.html')
 
 def feeds(request):
-    return render(request, 'pages/feed.html')    
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+
+    rooms = Room.objects.filter(
+        Q(category__name__icontains=q) |
+        Q(name__icontains=q) |
+        Q(notes__icontains=q)
+    )
+       
+    categories = Category.objects.all()
+    room_count = rooms.count()
+
+    context = {'rooms': rooms, 'categories':categories, 'room_count': room_count}
+    return render(request, 'feed.html', context, )    
 
 def signin(request):
+
+    if request.user.is_authenticated:
+        return redirect('feeds')
+
     if request.method == 'POST':
         username = request.POST.get('username').lower()
         password = request.POST.get('password')
@@ -33,6 +54,7 @@ def signin(request):
         else:
             messages.error(request, 'Invalid username or Password')
     return render(request, 'pages/signin.html')    
+
 
 def signout(request):
     logout(request)
@@ -56,4 +78,88 @@ def signup(request):
             
     return render(request, "pages/signup.html", {"form":form})    
 
- 
+
+@login_required(login_url='signin')
+def createRoom(request):
+    form = RoomForm()
+    #categories = Category.objects.all()
+    if request.method == 'POST':
+        form = RoomForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            #Room.objects.create(
+            #    host=request.user,
+            #    category=category,
+
+            
+
+            return redirect('feeds')
+
+    context={'form': form}
+    return render(request, 'pages/room_form.html', context)    
+
+#rooms = [
+#    {'id': 1, 'name': 'Empty bottles'},
+#    {'id': 2, 'name': 'Panggatong'},
+#    {'id': 3, 'name': 'Lumang papel'},
+#]     
+
+def room(request, pk):
+    room = Room.objects.get(id=pk)
+    room_messages = room.message_set.all().order_by('-created')
+
+    if request.method == 'POST':
+        message = Message.objects.create(
+            user=request.user,
+            room=room,
+            body=request.POST.get('body')
+        )
+        return redirect('room', pk=room.id)
+    context={'room': room, 'room_messages':room_messages}
+    return render(request, 'pages/room.html', context)
+
+
+
+@login_required(login_url='signin')
+def updateRoom(request, pk):
+    room = Room.objects.get(id=pk)
+    form = RoomForm(instance=room)
+
+    if request.user != room.host:
+        return HttpResponse('Post can only be edited by post owner')
+
+    if request.method == 'POST':
+        form = RoomForm(request.POST, instance=room)
+        if form.is_valid():
+            form.save()
+            return redirect('feeds')
+
+    context = {'form': form}
+    return render(request, 'pages/room_form.html', context)
+
+
+@login_required(login_url='signin')
+def deleteRoom(request, pk):
+    room = Room.objects.get(id=pk)
+
+    if request.user != room.host:
+        return HttpResponse('Only the post owner can delete this post')
+
+    if request.method == 'POST':
+        room.delete()
+        return redirect('feeds')
+    return render(request, 'pages/delete.html', {'obj':room})   
+
+
+@login_required(login_url='signin')
+def deleteMessage(request, pk):
+    message = Message.objects.get(id=pk)
+
+    if request.user != message.user:
+        return HttpResponse('Only the post owner can delete this post')
+
+    if request.method == 'POST':
+        message.delete()
+        return redirect('feeds')
+    return render(request, 'pages/delete.html', {'obj':message})   

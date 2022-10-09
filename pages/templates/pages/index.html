@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav  ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href='feeds'>Home</a>
+          <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About Us</a>
@@ -38,7 +38,7 @@
           <a class="nav-link" href="#">Contact Us</a>
         </li>
         <li class="nav-item">
-          <button type="submit" class="mx-1 btn btn-outline-light w-100" onclick="location.href = 'signup';">Sign up</button>
+          <a  class="mx-1 btn btn-outline-light w-100" href ="{% url 'signup' %}"> Sign up</a>
         </li>        
       </ul>
     </div>
@@ -54,7 +54,7 @@
     <div class="col-sm text-center">
       <h1 class="mt-5" style="font-family: 'Montserrat', sans-serif; font-size: 64px; font-weight: 700/bold; letter-spacing: 0em; line-height: 1;">Make sure your recycle counts</h1>
       
-      <p class="text-muted">Already have an account?<button type="submit" class="mx-1 btn btn-success w-25" onclick="location.href = 'signin';">Sign in</button></p>
+      <p class="text-muted">Already have an account?<a type="submit" class="mx-1 btn btn-success w-25" href="{% url 'signin' %}">Sign in</a></p>
     </div>
     
     <div class="col-sm">
