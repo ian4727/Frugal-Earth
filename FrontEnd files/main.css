@@ -344,3 +344,31 @@ margin: .25rem;
     font-size: 13px;
 }
 
+/*item*/
+.item-page{
+    padding: var(--card-padding);
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+}
+
+.item-user h5{
+    margin: 0;
+}
+
+.item-detail{
+    text-align: left;
+}
+
+.btn-send{
+    /*background: ;*/
+    color: white;
+
+    display: inline-block;
+    padding: var(--btn-padding);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+}
