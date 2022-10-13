@@ -401,3 +401,15 @@ margin: .25rem;
 .create-footer .btn-success{
     width: 100%;
     margin: auto;
+ 
+.create-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 155px; 
+    margin-bottom: 1rem;
+}   
+
+.btn-close{
+    text-align: right;
+}
+
