@@ -2,13 +2,32 @@
 
 {% block content %}
 
-<h1>{{room.name}}</h1>
+<div>
+    <a href="{% url 'feeds' %}">Back</a>
+</div>
 
-<p>{{room.notes}}</p>
+<div>
+    <div>
+    <h3>{{room.name}}<h3>
+    </div>    
+        <p>{{room.notes}}</p>
+        <p>Location: {{room.location}}</p>
+        <p>Condition: {{room.condition}}</p>
+        <p>Quantity: {{room.quantity}}</p> 
+    
+    
+        <div>
+            <small>{{room.category.name}}</small>
+        </div> 
+</div>  
 
+
+
+
+<hr>
 <div class="comment-wrapper">
-    <h3>Conversation</h3>
-    <hr>
+    <h4>Conversation</h4>
+    
 
     {% for message in room_messages %}  
         <div>

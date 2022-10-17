@@ -1,0 +1,102 @@
+
+
+
+<!--
+    <div>
+    <form method="POST" action="" >
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <input type="submit" value="Apply changes"/>
+
+        
+    </form>    
+    <button>
+            <a href="{% url 'user-profile' user.id %}">Cancel
+    </a>
+    </button>
+
+</div>!-->
+
+
+<!-- The Modal!-->
+    <div class="modal" id="myModalEdit">
+     <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header !-->
+        <div class="modal-header">
+          <h6 class="modal-title">Edit Profile</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body !-->
+        <div class="modal-body">
+          
+          <form method="POST" enctype="multipart/form-data" action="" class="edit-info">
+            {% csrf_token %}
+
+            <div class="acc-preview">
+              <div class="acc-photo">
+                <img src="{{request.user.avatar.url}}">
+              </div>
+            </div>
+
+            <div class="account-info">
+                <h6>{{user.username}}</h6>
+                <small>{{user.name}}</small>
+            </div>
+              
+            
+
+
+
+            {% for field in form %}
+              <div class="row">
+                <div class="col">
+                  <label for="fname" class="form-label">{{field.label}}</label>
+                  {{field}}
+                </div><!--col!-->
+                {% endfor %}
+              </div><!--row-->  
+                <!--
+                <div class="col">
+                  <label for="lname" class="form-label">Last Name</label>
+                  <input type="lname" class="form-control" id="lname" placeholder="Sales">
+                </div>
+              </div><!---end of row!
+
+              <label for="username" class="form-label">Username</label>
+              <input type="username" class="form-control" id="username" placeholder="celeste.francisco.1441">
+                  
+              <label class="form-label" for="customFile">Upload Image</label>
+              <input type="file" class="form-control" id="customFile" />!-->
+            
+            
+
+
+
+          </form>
+
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-success" value="Save Changes"/>
+          </div>
+  
+          <button>
+              <a href="{% url 'user-profile' user.id %}">Cancel</a>
+          </button>
+
+
+
+
+        </div><!--modalBody-->
+  
+        <!-- Modal footer !-->
+       
+        
+  
+      </div><!--modalContent-->
+
+      </div>
+      </div>

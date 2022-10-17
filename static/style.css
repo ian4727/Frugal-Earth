@@ -69,3 +69,9 @@ transform: rotateY(180deg);
 .custom-shape-divider-bottom-1663567819 .shape-fill {
 fill: #A4D24E;
 }
+
+
+hr {
+    clear: both;
+    visibility: hidden;
+}

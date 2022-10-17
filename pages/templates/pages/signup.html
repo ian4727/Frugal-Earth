@@ -62,7 +62,13 @@
       <form method="POST" action="" class="bg-dark text-white p-3 rounded border border-dark">
        {% csrf_token %}
          
-            
+       {% for field in form %}
+       <div class="row">
+         <label for="room_name" class="form-label">{{field.label}}</label>
+         {{field}}
+       </div>
+
+       {% endfor %}
         <!--div class="row">
             <div class="col">
                  <label for="fname" class="form-label">First Name</label>
@@ -75,7 +81,7 @@
                 <input type="lname" class="form-control bg-dark border border-secondary text-white" id="lname" aria-describedby="emailHelp">
             </div>    
          </div!-->
-         
+        <!--
         <div>
           <label for="email" class="form-label">Email Address</label>
         {{form.email}}
@@ -94,7 +100,7 @@
        <div>
         <label for="password" class="form-label">Confirm Password</label>
         {{form.password2}}
-       </div> 
+       </div> !-->
     
         <button type="submit" class="btn btn-success w-100 mt-3">Create Account</button--!>
       </form>
