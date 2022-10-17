@@ -3,11 +3,10 @@ from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room, Category, Message
-from .forms import RoomForm
+from .models import Room, Category, Message, User
+from .forms import RoomForm, UserForm
 from .forms import CreateUserForm
 
 
@@ -28,6 +27,7 @@ def feeds(request):
        
     categories = Category.objects.all()
     room_count = rooms.count()
+    room_messages = Message.objects
 
     context = {'rooms': rooms, 'categories':categories, 'room_count': room_count}
     return render(request, 'feed.html', context, )    
@@ -82,21 +82,25 @@ def signup(request):
 @login_required(login_url='signin')
 def createRoom(request):
     form = RoomForm()
-    #categories = Category.objects.all()
+
     if request.method == 'POST':
-        form = RoomForm(request.POST)
+        form = RoomForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+           room = form.save(commit=False)
+           room.host = request.user
+           room.save()
+           return redirect('feeds')
+            #category_name = request.POST.get('category')
+            #category, created = Category.objects.get_or_create(name=category_name)
 
             #Room.objects.create(
             #    host=request.user,
             #    category=category,
+            #    name=request.POST.get('name'),
+            #    notes=request.POST.get('description'),
+            #    )    
 
-            
-
-            return redirect('feeds')
-
-    context={'form': form}
+    context={'form':form}
     return render(request, 'pages/room_form.html', context)    
 
 #rooms = [
@@ -120,6 +124,31 @@ def room(request, pk):
     return render(request, 'pages/room.html', context)
 
 
+def userProfile(request, pk):
+    user = User.objects.get(id=pk)
+    rooms = user.room_set.all()
+    
+    #room_messages = user.message_set.all()
+    #categories = Category.objects.all()
+    context = {'user':user, 'rooms':rooms}
+    return render(request, 'pages/profile.html', context)
+    #return render('user-profile', pk=user.id,)
+
+
+@login_required(login_url='signin')
+def updateUser(request):
+    user = request.user 
+    form = UserForm(instance=user)
+
+    if request.method == 'POST':
+        form = UserForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('user-profile', pk=user.id)
+
+    return render(request, 'pages/update_profile.html', {'form':form}) 
+
+
 
 @login_required(login_url='signin')
 def updateRoom(request, pk):
@@ -130,7 +159,7 @@ def updateRoom(request, pk):
         return HttpResponse('Post can only be edited by post owner')
 
     if request.method == 'POST':
-        form = RoomForm(request.POST, instance=room)
+        form = RoomForm(request.POST, request.FILES, instance=room)
         if form.is_valid():
             form.save()
             return redirect('feeds')
@@ -163,3 +192,7 @@ def deleteMessage(request, pk):
         message.delete()
         return redirect('feeds')
     return render(request, 'pages/delete.html', {'obj':message})   
+
+
+
+
