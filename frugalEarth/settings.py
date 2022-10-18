@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'frugalEarth.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'AXhRbM7WnKeHdUPQsZat',
+        'HOST': 'containers-us-west-97.railway.app',
+        'PORT': '6193',
     }
 }
 

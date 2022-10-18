@@ -59,16 +59,20 @@
                             color: none;
                              }   
                     </style>
-                   
+
+                    <hr>
                     <a href="{% url 'room' room.id %}">  
-                    <div>{{room.notes|truncatechars:70}}</div>
+                    <p>{{room.notes|truncatechars:70}}</p>
                     </a>
+
                     <hr>
-                    <div><span>Location: {{room.location}}</span></div>
+                    <div><p>Location: {{room.location}}</p></div>
+
                     <hr>
-                    <div><span>Condition: {{room.condition}}</span></div>
+                    <div><p>Condition: {{room.condition}}</p></div>
+
                     <hr>
-                    <div><span>Quantity: {{room.quantity}}</span></div>
+                    <div><p>Quantity: {{room.quantity}}</p></div>
                 </div> 
             </div> 
 

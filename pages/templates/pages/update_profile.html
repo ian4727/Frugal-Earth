@@ -1,5 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+ <title>Edit Profile</title>   
+    <head>
+      <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap 5.1.2-->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!--CSS-->
+        <link rel="stylesheet" href="static/main.css">
 
 
+    </head>
+    <body>
+
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+        <div class="container">
+          <a class="navbar-brand navbar-right" href="{% url 'home' %}">FrugalEarth</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!--Search-->
+          <form method="GET" action="{% url 'feeds' %}">
+            <div class="search-bar">
+             <i class="bi bi-search"></i>
+                <input type="text" name="q" id="" placeholder="What are you looking for?"/>
+            </div>
+        </form>
+
+    
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav  ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+             
+              <li>
+              <div>
+                {% if request.user.is_authenticated %}
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signout' %}">Sign Out</a>
+
+                {% else %} 
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signin' %}">Sign in</a>
+
+                         
+                {% endif %}
+             </div>
+             </li> 
+
+            </ul>
+
+           
+
+          </div>
+          
+        </div>
+
+       
+    </nav>
+
+
+          <!--end of navbar-->
+
+ <div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+    
+        <div class="col-sm-4 editprofile">
+            <div class="current-profile">
+                <div class="edit-btn">
+                    <h5><b>Edit Profile</b></h5>
+                    <a href="{{request.META.HTTP_REFERER}}"><button type="button" class="btn-close"></button></a>
+                </div>
+               
+                <div class="editcurrent">
+                    
+                    <div class="account-info">
+                        <h6>@{{user.username}}</h6>
+                        <small>{{user.name}}</small>
+                    </div>
+                </div>
+    
+                <div class="edit-body">
+                    <form action="">
+                         
+
+                          {% for field in form %}
+              <div class="row">
+                <div class="col">
+                  <label for="fname" class="form-label">{{field.label}}</label>
+                  {{field}}
+                </div>
+                {% endfor %}
+
+                <div class="modal-footer">
+            <input type="submit" class="btn btn-success" value="Save Changes"/>
+
+            
+
+          </div>
+  
+                              <!--label for="fname" class="form-label">First Name</label>
+                              <input type="fname" class="form-control" id="fname" placeholder="Aaron">
+                            </div>
+              
+                            <div class="col">
+                              <label for="lname" class="form-label">Last Name</label>
+                              <input type="lname" class="form-control" id="lname" placeholder="Sales">
+                            </div>
+                          </div><!---end of row-
+            
+                          <label for="username" class="form-label">Username</label>
+                          <input type="username" class="form-control" id="username" placeholder="celeste.francisco.1441">
+                              
+                          <label class="form-label" for="customFile">Upload Image</label>
+                          <input type="file" class="form-control" id="customFile" />
+                    </form>
+                </div>
+    
+                <div class="edit-footer" style="text-align: center;">
+                    <button type="button" class="btn btn-success">Save Changes</button>
+                </div>
+    
+    
+    
+                
+    
+    
+    
+    
+    
+            </div>
+        </div>
+    
+    
+        <div class="col-sm-4">       
+        </div>
+    </div>
+ </div>
+                
+
+
+
+
+
+
+            </body>
+    </html>
 
 <!--
     <div>
@@ -20,18 +176,18 @@
 </div>!-->
 
 
-<!-- The Modal!-->
+<!-- The Modal!
     <div class="modal" id="myModalEdit">
      <div class="modal-dialog">
       <div class="modal-content">
   
-        <!-- Modal Header !-->
+        <!-- Modal Header !
         <div class="modal-header">
           <h6 class="modal-title">Edit Profile</h6>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
   
-        <!-- Modal body !-->
+        <!-- Modal body !
         <div class="modal-body">
           
           <form method="POST" enctype="multipart/form-data" action="" class="edit-info">
@@ -57,9 +213,9 @@
                 <div class="col">
                   <label for="fname" class="form-label">{{field.label}}</label>
                   {{field}}
-                </div><!--col!-->
+                </div><!--col!
                 {% endfor %}
-              </div><!--row-->  
+              </div><!--row
                 <!--
                 <div class="col">
                   <label for="lname" class="form-label">Last Name</label>
@@ -71,7 +227,7 @@
               <input type="username" class="form-control" id="username" placeholder="celeste.francisco.1441">
                   
               <label class="form-label" for="customFile">Upload Image</label>
-              <input type="file" class="form-control" id="customFile" />!-->
+              <input type="file" class="form-control" id="customFile" />!
             
             
 
@@ -92,11 +248,11 @@
 
         </div><!--modalBody-->
   
-        <!-- Modal footer !-->
+        <!-- Modal footer !
        
         
   
-      </div><!--modalContent-->
+      </div><!--modalContent
 
       </div>
       </div>
