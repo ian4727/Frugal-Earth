@@ -21,7 +21,7 @@ distro==1.7.0
 
 dj-database-url==1.0.0
 
-duplicity==0.8.21
+
 fasteners==0.14.1
 filelock==3.8.0
 future==0.18.2
