@@ -19,6 +19,7 @@ class User(AbstractUser):
 class Room(models.Model):
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200)
+    price = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
     #category = models.ForeignKey(to='consult.Question')
@@ -26,6 +27,7 @@ class Room(models.Model):
     condition = models.CharField(max_length=200)
     image = models.ImageField(null=True,blank=True)
     notes = models.TextField(null=True, blank=True)
+    
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
         

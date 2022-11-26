@@ -193,6 +193,7 @@ def deleteMessage(request, pk):
         return redirect('feeds')
     return render(request, 'pages/delete.html', {'obj':message})   
 
-
+def HomeView(LoginRequiredMixin, TemplateView):
+    template_name = "index.html" 
 
 
