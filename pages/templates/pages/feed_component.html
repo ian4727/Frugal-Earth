@@ -1,0 +1,126 @@
+{% load static %}
+
+
+    {%for room in rooms %}
+
+
+
+<div class="feed" style="background: white;">
+
+
+<div class="neck" style="display: flex; justify-content: space-between; padding: 1rem 1rem 0;">
+<div class="user">
+
+{% if room.host.id %}
+                       <div class="profile-photo">
+                            <a href="{% url 'user-profile' room.host.id %}" class="">
+                            <img loading="lazy" src="{{room.host.avatar.url}}"/></a>
+                        </div>
+
+                        <!--<div class="account-photo">
+                            <img src="{{request.user.avatar.url}}">
+                        </div>!-->
+
+                        <div class="create-info">
+                            <a href="{% url 'user-profile' room.host.id %}" class=""><h6>@{{room.host.username}}</h6></a>
+                            <small>{{room.created|timesince}}, {{room.location}}</small>
+                        </div>
+                         {% endif %}
+</div>
+<div class="chatandreport" style="display: flex;">
+
+<a href ="{% url 'chat' %}">
+ <button type="button" class="btn btn-danger" style="border-radius: 50px;"><i class="bi bi-chat"></i> Chat</button></a>
+
+
+
+
+<div class="dropdown">
+    <button type="button" class="btn" data-bs-toggle="dropdown" style="border: none;">
+      <span><i class="bi bi-three-dots-vertical"></i></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li style="text-align: center;"><a class="dropdown-item" href="{% url 'report' %}"><h6 style="color: #008f79;"><b>Report User</b></h6></a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+</div>
+
+
+<!--a href ="{% url 'report' %}">Report</a-->
+
+
+
+
+<div class="photo"><a href="#">
+                    <img loading="lazy" src="#"></a>
+                </div>
+
+
+
+
+
+
+
+ <div class="feed-body" style="border-bottom: 1px solid #6c757d; margin-bottom: 0; padding-bottom: 1rem;">
+
+
+                    <h5>{{room.name}}</h5>
+                    Category: {{room.category}}<br>
+
+                    <h6 style="margin: 0.3rem 0;">Notes: {{room.notes|truncatechars:70}}</h6>
+
+                    <!--Location: {{room.location}}<br-->
+                    Condition: {{room.condition}}<br>
+                    Quantity: {{room.quantity}}<br>
+
+                    </div>
+
+
+
+
+
+
+<div class="feed-footer">
+    <div class="act-button">
+
+        <div class="view-button">
+            <a href="{% url 'room' room.id %}"><small class="bi bi-list-ul">   <b>View</b></small> </a>
+        </div>
+
+
+
+        {% if request.user == room.host %}
+        <div class="update-button">
+            <a href="{% url 'update-room' room.id %}"><small class="bi bi-pencil-square">   <b>Update</b></small></a>
+        </div>
+
+        <div class="delete-button">
+            <a href="{% url 'delete-room' room.id %}"><small class="bi bi-trash3">  <b>Delete</b></small></a>
+        </div>
+        {% endif %}
+    </div>
+</div><!--end of feed-footer-->
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+    {% endfor %}
