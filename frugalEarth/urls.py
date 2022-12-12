@@ -26,7 +26,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
-<<<<<<< HEAD
+#<<<<<<< HEAD
 
     #path(r'^chat/', include('chat.urls', namespace='chat')),
     #path('api/', include('pages.api.urls'))
@@ -35,11 +35,11 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     #path('', include('social_django.urls', namespace='social'))
 
-=======
+#=======
     #path('api/', include('pages.api.urls'))
 
-    path('oauth/', include('social_django.urls', namespace='social')),
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+    #path('oauth/', include('social_django.urls', namespace='social')),
+#>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
