@@ -1124,3 +1124,32 @@ background: var(--color-light);
     border-radius: 5px;
     margin: 0.5rem;
 }
+
+/*chat*/
+.chatbox{
+    padding: var(--card-padding);
+    border-radius: 5px;
+    background: var(--color-white);
+}
+
+.top{
+    border-bottom: 1px solid #838383;
+
+}
+
+.chatui{
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+}
+
+
+.space{
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+
+}
+
+.note::placeholder{
+    margin-top: 0;
+}

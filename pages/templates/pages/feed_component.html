@@ -56,10 +56,9 @@
 
 
 
-<div class="photo"><a href="#">
-                    <img loading="lazy" src="#"></a>
+<div class="photo"><a href="{% url 'room' room.id %}">
+                    <img loading="lazy" src="{{room.image.url}}"></a>
                 </div>
-
 
 
 
