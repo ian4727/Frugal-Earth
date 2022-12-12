@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 {% load static %}
 
@@ -70,3 +71,18 @@
     </body>
 
 </html>
+=======
+
+
+{% block content %} 
+
+<form method="POST" action="">
+    {% csrf_token %} 
+    <p>Are you sure you want to delete "{{obj}}"?</p>
+    <a href="{{request.META.HTTP_REFERER}}">Cancel</a>
+    <input type="submit" value="Confirm"/>
+</form>
+
+
+{% endblock content %}
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024

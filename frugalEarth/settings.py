@@ -31,14 +31,18 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'pages.apps.PagesConfig',
 
 
@@ -49,10 +53,16 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
 
+=======
+    
+    'pages.apps.PagesConfig',
+    'social_django',
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 ]
 
 AUTH_USER_MODEL = 'pages.User'
 
+<<<<<<< HEAD
 ASGI_APPLICATION = 'frugalEarth.asgi.application'
 
 CHANNEL_LAYERS = {
@@ -61,6 +71,8 @@ CHANNEL_LAYERS = {
     }
 }
 
+=======
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -71,7 +83,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
+<<<<<<< HEAD
 
+=======
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 ]
 
 ROOT_URLCONF = 'frugalEarth.urls'
@@ -89,12 +105,18 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
+<<<<<<< HEAD
 
+=======
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
             ],
         },
     },
 ]
 
+<<<<<<< HEAD
 SITE_ID = 2
 ACCOUNT_EMAIL_VERIFICATION = "none"
 LOGIN_REDIRECT_URL = 'feeds'
@@ -116,6 +138,16 @@ AUTHENTICATION_BACKENDS = (
 
 
 
+=======
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.github.GithubOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 WSGI_APPLICATION = 'frugalEarth.wsgi.application'
 
 
@@ -126,7 +158,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
     }
 }
 
@@ -165,6 +201,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+<<<<<<< HEAD
 #SOCIAL_AUTH_FACEBOOK_KEY = '419831626882025'
 #SOCIAL_AUTH_FACEBOOK_SECRET = '2f1fd921dcac813b0f0e2087003af289'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
@@ -187,14 +224,36 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
 
+=======
+STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
+#STATIC_ROOT = BASE_DIR / 'static'
+
+MEDIA_ROOT = BASE_DIR / 'static/images'
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home'
+
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 
 #TALKJS_APP_ID = os.environ.get('tfpR0cQN')
 #TALKJS_API_SECRET = os.environ.get('sk_test_GsEij9PXy2DewA3xK3CHJo4SHv9oWlPu')
 #TALKJS_API_BASE_URL = os.environ.get('https://api.talkjs.com/v1/')
 
 
+=======
+SOCIAL_AUTH_FACEBOOK_KEY = '671617861185128'  
+SOCIAL_AUTH_FACEBOOK_SECRET = 'b6234e6a35b219bdbccfc4f70948c107'
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
