@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -1154,7 +1153,6 @@ background: var(--color-light);
 .note::placeholder{
     margin-top: 0;
 }
-=======
  
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -1507,4 +1505,3 @@ hr {
     visibility: hidden;
     display: none;
 }
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
