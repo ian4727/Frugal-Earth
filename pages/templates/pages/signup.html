@@ -1,14 +1,14 @@
-<<<<<<< HEAD
+
     {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
  <title>Sign Up</title>
-=======
+
 <!DOCTYPE html>
 <html lang="en">
- <title>signup</title>   
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+ <title>signup</title>
+
     <head>
       <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
         <!--CSS-->
-<<<<<<< HEAD
+
         <link rel="stylesheet" href="{% static 'main.css' %}">
 
      <style>
@@ -25,21 +25,21 @@
     </head>
 
 
-=======
-        
+
+
      <style>
    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
         </style>
 
     </head>
 
-    {% load static %}  
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+    {% load static %}
+
 
 
     <body style="background-color: #0d1017;">
 
-<<<<<<< HEAD
+
         <!-- A grey horizontal navbar that becomes vertical on small screens
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <div class="container">
@@ -49,18 +49,18 @@
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <div class="container-fluid">
             <a class="navbar-brand navbar-right" href="index.html">FrugalEarth</a>
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
               <ul class="navbar-nav  ms-auto">
                 <li class="nav-item">
-<<<<<<< HEAD
+
                   <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
-=======
+
                   <a class="nav-link" href="{% url 'feeds' %}">Posts</a>
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="# ">About Us</a>
@@ -69,7 +69,7 @@
                   <a class="nav-link" href="#">Contact Us</a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
+
                   <a class="mx-1 btn btn-outline-light w-100" href="{% url 'signin' %}">Sign in</a>
                 </li>
               </ul>
@@ -199,31 +199,31 @@
       </div>
     </div><!--end of row-->
   </div><!--end of container-->
-=======
+
                   <button type="submit" class="mx-1 btn btn-outline-light w-100" onclick="location.href ='signin';">Sign in</button>
-                </li>        
+                </li>
               </ul>
             </div>
           </div>
         </nav>
-  
- 
-       
-       
-          
+
+
+
+
+
 
  <div class="tab-content vh-100 align-items-center justify-content-center text-white">
     <div class="container" style="width: 400px; font-family: 'roboto', sans-serif; font-size: 13px; ">
-       
+
         <img src="{% static 'image/globelogo.png' %}" class="img-responsive center-block d-block mx-auto img-fluid mt-5">
         <h4 class="p-3 mb-0 text-center">Sign Up to FrugalEarth</h4>
 
 
 
-        
+
       <form method="POST" action="" class="bg-dark text-white p-3 rounded border border-dark">
        {% csrf_token %}
-         
+
        {% for field in form %}
        <div class="row">
          <label for="room_name" class="form-label">{{field.label}}</label>
@@ -241,7 +241,7 @@
             <div class="col">
                 <label for="lname" class="form-label">Last Name</label>
                 <input type="lname" class="form-control bg-dark border border-secondary text-white" id="lname" aria-describedby="emailHelp">
-            </div>    
+            </div>
          </div!-->
         <!--
         <div>
@@ -252,18 +252,18 @@
        <div>
        <label for="username" class="form-label">Username</label>
         {{form.username}}
-       </div> 
+       </div>
 
        <div>
         <label for="password" class="form-label">Create Password</label>
         {{form.password1}}
-       </div> 
+       </div>
 
        <div>
         <label for="password" class="form-label">Confirm Password</label>
         {{form.password2}}
        </div> !-->
-    
+
         <button type="submit" class="btn btn-success w-100 mt-3">Create Account</button--!>
       </form>
 
@@ -271,21 +271,19 @@
         <a class="btn btn-success w-100 mt-3" href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
       </div>
 
-      
 
 
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+
 
 
 
     </body>
 
-<<<<<<< HEAD
-=======
+
 
       <footer>
 
       </footer>
 
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+
 </html>

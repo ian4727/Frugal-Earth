@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -231,17 +231,17 @@
         </div>
 </div>
 =======
-    </div>    
+    </div>
         <p>{{room.notes}}</p>
         <p>Location: {{room.location}}</p>
         <p>Condition: {{room.condition}}</p>
-        <p>Quantity: {{room.quantity}}</p> 
-    
-    
+        <p>Quantity: {{room.quantity}}</p>
+
+
         <div>
             <small>{{room.category.name}}</small>
-        </div> 
-</div>  
+        </div>
+</div>
 >>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 
 
@@ -255,9 +255,9 @@
 
     {% for message in room_messages %}
 =======
-    
 
-    {% for message in room_messages %}  
+
+    {% for message in room_messages %}
 >>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
         <div>
             {% if request.user == message.user %}
@@ -280,9 +280,9 @@
         <input type="text" name="body" placeholder="Write your message here...">
 
 =======
-        {% csrf_token %}  
+        {% csrf_token %}
         <input type="text" name="body" placeholder="Write your message here...">
-        
+
 >>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
     </form>
 </div>
@@ -290,6 +290,6 @@
 
 <<<<<<< HEAD
 {% endblock %}!-->
-=======
+
 {% endblock %}
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+

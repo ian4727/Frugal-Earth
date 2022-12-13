@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -354,7 +354,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
- <title>Feed</title>   
+ <title>Feed</title>
     <head>
       <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -368,7 +368,7 @@
     </head>
     <body>
 
-       
+
 
 
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
@@ -386,7 +386,7 @@
                 </div>
             </form>
 
-        
+
 
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav  ms-auto">
@@ -399,29 +399,29 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">Contact Us</a>
                   </li>
-                 
+
                   <li>
                   <div>
                     {% if request.user.is_authenticated %}
                     <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signout' %}">Sign Out</a>
 
-                    {% else %} 
+                    {% else %}
                     <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signin' %}">Sign in</a>
 
-                             
+
                     {% endif %}
                  </div>
-                 </li> 
+                 </li>
 
                 </ul>
 
-               
+
 
               </div>
-              
+
             </div>
 
-           
+
         </nav>
 
 
@@ -438,27 +438,27 @@
             <div class="left">
             <div class="sidebar">
                 <h5>Categories</h5>
-               
+
                 <a href ="{% url 'feeds' %}" class="menu-item" class="icon"><h6>All  <span>{{rooms.count}}</span></h6></a>
-                    
-                    
-                   
-                
 
-                {% for category in categories %}  
-                <a href="{% url 'feeds' %}?q={{category.name}}" class="menu-item"><div class="icon"> </div><h6>{{category.name}}   {{category.room_set.all.count}}</h6></a>                    
-                      
-                                         
-                   
+
+
+
+
+                {% for category in categories %}
+                <a href="{% url 'feeds' %}?q={{category.name}}" class="menu-item"><div class="icon"> </div><h6>{{category.name}}   {{category.room_set.all.count}}</h6></a>
+
+
+
                 {% endfor %}
-                
 
-                        
-               
-                        
+
+
+
+
                 <!--
-                    
-                
+
+
 
 
                 <a class="menu-item"><div class="icon"><img src="{% static 'image/tool-box.png' %}"></div><h6>Household Tool</h6></a>
@@ -474,64 +474,64 @@
                 <a class="menu-item"><div class="icon"><img src="{% static 'image/drinks.png' %}"></div><h6>Consumables</h6></a>
 
                 <a class="menu-item"><div class="icon"><img src="{% static 'image/furnitures.png' %}"></div><h6>Furniture</h6></a>
-                
+
                 <a class="menu-item"><div class="icon"><img src="{% static 'image/other.png' %}"></div><h6>Others</h6></a!-->
 
-               
+
 
             </div><!--sidebar-->
-            
-            
+
+
             </div><!--left-->
         </div><!--classColsm3-->
 
         <div class="col-sm-5">
-            
-            {% include 'pages/feed_component.html' %}  
-          
 
-        
-           
+            {% include 'pages/feed_component.html' %}
+
+
+
+
         </div><!--colsm5-->
 
-        
+
         <div class="col-sm-3">
-            <div class="right">              
+            <div class="right">
 
                 <div class="head">
 
                  <!--Logged in-->
-                 {% if request.user.is_authenticated %}   
+                 {% if request.user.is_authenticated %}
                  <div class="user">
-                    
+
                   <div class="info">
                     <h4>Hello {{user.username}}!</h4>
-                  </div> 
+                  </div>
 
                   <a href="{% url 'user-profile' user.id %}">
                     <div class="profile-photo">
                       <div>
                         <img src="{{request.user.avatar.url}}">
                       </div>
-                  </a>   
-                  
-                 </div><!--profilephoto-->
-                    
-                 </div><!--user-->   
+                  </a>
 
-            
+                 </div><!--profilephoto-->
+
+                 </div><!--user-->
+
+
 
                 </div><!--end of feed-->
             {% endif %}
 
 
-            
+
 
             </div><!--right-->
 
 
 
-                
+
                   <!-- django Button to Open the Modal!-->
                 <div>
                   <a  class="btn btn-success"  style="width:290px;" href="{% url 'create-post' %}">
@@ -539,7 +539,7 @@
                   </a>
                 </div>
 
-                
+
                 <!--original form
 <div>
     <form method="POST" action="" >
@@ -548,38 +548,38 @@
         {{form.as_p}}
 
         <input type="submit" value="Create Post"/>
-    </form>    
+    </form>
 
 
 </div>
 
-                <!-- Button to Open the Modal 
+                <!-- Button to Open the Modal
                 <button type="button" class="btn btn-success"  style="width:290px;" data-bs-toggle="modal" data-bs-target="#myModal">
                     Create Post
                </button>
 
-               <!-- The Modal 
+               <!-- The Modal
                     <div class="modal" id="myModal">
                     <div class="modal-dialog">
                     <div class="modal-content">
- 
-       <!-- Modal Header 
+
+       <!-- Modal Header
        <div class="modal-header">
          <h5 class="modal-title">Create Post </h5>
          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
        </div>
- 
-       <!-- Modal body 
+
+       <!-- Modal body
        <div class="modal-body">
-               
+
         <form method="POST" action="" class="post-item">
             {% csrf_token %}
-         
+
             {{form.as_p}}
-            
+
            <label for="location" class="form-label">Location</label>
            <input type="location" class="form-control" id="location">
-           {{form.name}} 
+           {{form.name}}
 
            <label for="category" class="form-label">Category</label>
            <select class="form-select">
@@ -595,12 +595,12 @@
              <option value="furnitures">Furniture</option>
              <option value="others">Others</option>
            </select>
-           {{form.category}} 
+           {{form.category}}
 
            <label for="quantity" class="form-label">Quantity</label>
            <input type="location" class="form-control" id="quantity">
            {{form.quantity}}
-           
+
            <label for="condition" class="form-label">Condition</label>
            <select class="form-select">
              <option>Used</option>
@@ -611,12 +611,12 @@
            <label class="form-label" for="customFile">Upload Image</label>
            <input type="file" class="form-control" id="customFile" />
 
-           
+
            <label for="notes" class="form-label">Notes</label>
            <input type="notes" class="form-control" id="notes">
            !-->
 
-           <!-- Modal footer 
+           <!-- Modal footer
        <div class="modal-footer">
         <input type="submit" class="btn btn-success" data-bs-dismiss="modal" value="Create Post"/>
       </div>
@@ -625,9 +625,9 @@
 
        </div>
 
- 
-       
- 
+
+
+
      </div>
    </div>
  </div><!--end of modal-->
@@ -641,12 +641,12 @@
 
 
       </div><!--classRow-->
-    </div><!--container-->  
+    </div><!--container-->
 
 
 
           </main>
 
     </body>
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+
 </html>

@@ -2,11 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
  <title>Create Post</title>
-=======
- <title>Create Post</title>   
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
     <head>
       <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,31 +10,20 @@
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
         <!--CSS-->
-<<<<<<< HEAD
         <link rel="stylesheet" href="{% static 'main.css' %}">
-=======
-        <link rel="stylesheet" href="static/main.css">
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 
 
     </head>
     <body>
 
-<<<<<<< HEAD
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
             <div class="container">
               <a class="navbar-brand navbar-right" href="{% url 'home' %}">FrugalEarth</a>
-=======
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
-            <div class="container">
-              <a class="navbar-brand navbar-right" href="index.html">FrugalEarth</a>
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
 
 
-<<<<<<< HEAD
                 <div class="search-bar">
                     <form method="GET" action="{% url 'feeds' %}">
                     <i class="bi bi-search"></i>
@@ -48,14 +33,6 @@
 
 
 
-=======
-              <div class="search-bar">
-                <i class="bi bi-search"></i>
-                <input type="search" name="" id="" placeholder="What are you looking for?">
-             </div>
-
-        
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav  ms-auto">
@@ -63,7 +40,6 @@
                     <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
                   </li>
                   <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="{% url 'aboutUs' %}">About Us</a>
                   </li>
                   <li class="nav-item">
@@ -83,32 +59,16 @@
                 </ul>
               </div>
 
-=======
-                    <a class="nav-link" href="#">About Us</a>
-                  </li>
-                 
-                  <li class="nav-item">
-                    <button type="submit" class="mx-1 btn btn-outline-light w-100" onclick="location.href = 'signup.html';">Log Out</button>
-                  </li>        
-                </ul>
-              </div>
-          
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
             </div>
           </nav>
           <!--end of navbar-->
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 <div class="container">
 
 
         <div class="row">
-<<<<<<< HEAD
             <div class="col-sm-4">
             </div>
 
@@ -117,29 +77,16 @@
                 <div class="create-head">
                     <div class="create-btn">
                         <i class="bi bi-x-lg text-white"></i>
-=======
-            <div class="col-sm-4">                
-            </div>
-
-            <div class="createPost col-sm-4">
-                <div class="create-head">
-                    <div class="create-btn">
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
                         <h5><b>Create Post</b></h5>
                         <a href="{{request.META.HTTP_REFERER}}"><button type="button" class="btn-close"></button></a>
                     </div>
 
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 
 
 
                     <div class="user">
 
-<<<<<<< HEAD
 
                        <div class="profile-photo">
                             <img src="{{request.user.avatar.url}}">
@@ -149,13 +96,6 @@
                             <img src="{{request.user.avatar.url}}">
                         </div>!-->
 
-=======
-                        
-                        <!--<div class="account-photo">
-                            <img src="{{request.user.avatar.url}}">
-                        </div>!-->
-            
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
                         <div class="create-info">
                             <h6>@{{user.username}}</h6>
                             <small>{{user.name}}</small>
@@ -166,28 +106,15 @@
                 </div><!--end create-head-->
 
                 <div class="create-body">
-<<<<<<< HEAD
                     <form method="POST" action="" class="post-item  rounded" enctype="multipart/form-data">
-=======
-                    <form method="POST" action="" class="post-item" enctype="multipart/form-data"> 
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
                       {% csrf_token %}
 
                       {% for field in form %}
 
-<<<<<<< HEAD
-                      {{field.label}}<br>
-                        {{field}}<br>
-
-                      {% endfor %}
-
-
-=======
                         <label for="location" class="form-label">{{field.label}}</label>
                         {{field}}
-                      
-                      {% endfor %}  
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+
+                      {% endfor %}
 
                         <!--label for="category" class="form-label">Category</label>
                         <select class="form-select">
@@ -203,11 +130,7 @@
                           <option value="furnitures">Furniture</option>
                           <option value="others">Others</option>
                         </select>
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
                         <label for="quantity" class="form-label">Quantity</label>
                         <select class="form-select">
                           <option>1</option>
@@ -216,65 +139,36 @@
                           <option>4</option>
                           <option>5</option>
                         </select>
-<<<<<<< HEAD
 
 
 
 
 
-=======
-            
-                        
-            
-                        
-            
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
                         <label for="condition" class="form-label">Condition</label>
                         <select class="form-select">
                           <option>Used</option>
                           <option>New </option>
                         </select>
-<<<<<<< HEAD
 
                         <label class="form-label" for="customFile">Upload Image</label>
                         <input type="file" class="form-control" id="customFile" />
 
-=======
-            
-                        <label class="form-label" for="customFile">Upload Image</label>
-                        <input type="file" class="form-control" id="customFile" />
-                        
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
                         <label for="notes" class="form-label">Notes</label>
                         <input type="notes" class="form-control" id="notes" style="height: 100px;">!-->
                       </div>
 
-<<<<<<< HEAD
-                      <div class="create-footer">
-                          <input type="submit" class="btn btn-success" value="Post" style="width: 100%"/>
-                      </div>
-
-                      </form>
-=======
                       <div class="create-footer" style="text-align: center;">
                           <input type="submit" class="btn btn-success" value="Create Post"/>
                       </div>
 
                       </form>
-                
-                
-  
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 
 
 
 
-<<<<<<< HEAD
 
 
-                </div>
-=======
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+
             </div>
 
             <div class="col-sm-4">
@@ -310,11 +204,7 @@
       {{form.as_p}}
 
       <input type="submit" value="Create Post"/>
-<<<<<<< HEAD
   </form>
-=======
-  </form>    
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 
   <a href="{{request.META.HTTP_REFERER}}">Go Back</a>
 

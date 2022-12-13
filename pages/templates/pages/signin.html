@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -172,11 +172,11 @@
         </footer>
 
 </html>
-=======
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
- <title>signin</title>   
+ <title>signin</title>
     <head>
       <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -184,7 +184,7 @@
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
         <!--CSS-->
-        
+
      <style>
    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
         </style>
@@ -214,28 +214,28 @@
                 </li>
                 <!--li class="nav-item">
                   <button type="submit" class="mx-1 btn btn-outline-light w-100" onclick="location.href = 'signup.html';">Sign up</button>
-                </li!-->        
+                </li!-->
               </ul>
             </div>
           </div>
         </nav>
-  
+
           <div class="vh-100 align-items-center justify-content-center">
   <div class="container" style="width: 330px; font-family: 'roboto', sans-serif; font-size: 13px; ">
-  
-      
-        
+
+
+
               <div class="text-white text-center" style="background-color: #0d1017;  ">
                 <!--<img src="template/globelogo.png" class="img-responsive center-block d-block mx-auto img-fluid mt-5">!-->
               <h4 class="p-3 mb-0">Sign in to FrugalEarth</h4>
-              </div>  
-           
+              </div>
+
               <form method ="POST" action="" class="bg-dark text-white p-3 rounded border border-dark">
               {% csrf_token %}
                   <label class="form-label">Username</label>
                   <input type="text" class="form-control bg-dark border border-secondary text-white" name="username" aria-describedby="emailHelp" placeholder="Enter username">
-                  
-  
+
+
                   <label class="form-label mt-3">Password</label> <a href="#" class="text-decoration-none" style="margin-left: 105px; text-align: right;">Forgot password?</a>
                   <input type="password" class="form-control bg-dark border border-secondary text-white" name="password" placeholder="Enter password">
                  <button type="submit" value="Login" class="btn btn-success w-100 mt-3">Sign in</button>
@@ -246,7 +246,7 @@
               </div>
 
               <!--Python codes-->
-  
+
 {%if messages%}
 <ul class="messages">
   {% for message in messages%}
@@ -255,27 +255,27 @@
 </ul>
 {% endif%}
 
- 
+
 
 
 <!--end of Python codes-->
-              
-  
+
+
               <div class="text-white rounded border border-dark mt-3" style="background-color: #0d1017;">
                   <p class="p-1 mt-2 text-center">Not registered yet? <a href="{% url 'signup' %}" class="text-decoration-none">Sign up here</a>.</p>
               </div>
-          
-  
-  
-  
-  
-  
+
+
+
+
+
+
   </div>
   </div>
-  
-  
-  
-  
+
+
+
+
       </body>
 
 
@@ -284,4 +284,4 @@
         </footer>
 
 </html>
->>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+

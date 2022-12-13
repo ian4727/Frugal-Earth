@@ -104,28 +104,33 @@
 
                      {% for field in form %}
 
-                      {{field.label}}<br>
-                        {{field}}<br>
+                      <!--{{field.label}}<br>
+                        {{field}}<br!-->
+
+                       <label for="location" class="form-label">{{field.label}}</label>
+                        {{field}}
 
                       {% endfor %}
 
-<select class="form-select mt-3">
+<!--select class="form-select mt-3">
     <option value="" selected disabled>Select a Reason</option>
      <option>Suspicious Account</option>
      <option>Cancelling on Deal</option>
      <option>Offensive behaviour/ content</option>
      <option>Irrelevant Keywords</option>
-   </select>
+   </select!-->
 
                       <div class="create-footer">
-                          <!--input type="submit"value="Submit Report"/
+                          <!--input type="submit"value="Submit Report"/-->
+                          <input type="submit" class="btn btn-danger"style="margin: 0.5rem;" value="Submit Report"/>
+
 
                           <h6 style="margin: 0.5rem;">Let us know what's happening so we can resolve this quickly.</h6>
-                          <input type="notes" class="form-control" id="notes"  placeholder="" style="margin-top: 1rem; height: 150px;">
-                          <button type="button" class="btn btn-danger"style="margin: 0.5rem;">Submit Report</button>
+                          <!--input type="notes" class="form-control" id="notes"  placeholder="" style="margin-top: 1rem; height: 150px;">
+                          <!--button type="button" class="btn btn-danger"style="margin: 0.5rem;">Submit Report</button!-->
                       </div>
 
-                      </form!-->
+                      </form>
 
 
 
