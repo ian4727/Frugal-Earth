@@ -195,16 +195,16 @@ USE_TZ = True
 #STATIC_URL = '/static/images/'
 #MEDIA_URL = '/static/images/'
 
-#STATIC_URL = '/static/'
-#MEDIA_URL = '/static/images/'
+STATIC_URL = '/static/'
+MEDIA_URL = '/static/images/'
 
 #STATICFILES_DIRS = [
 #    BASE_DIR / 'static'
 #]
 
-#STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'static'
 
-#MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_ROOT = BASE_DIR / 'static/images'
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'

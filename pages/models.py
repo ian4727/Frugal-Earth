@@ -41,9 +41,15 @@ class Room(models.Model):
         return self.name
         #return str(self.title)
 
+<<<<<<< HEAD
 
 
 class Category(models.Model):
+=======
+  
+     
+class Category(models.Model):   
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
     name = models.CharField(max_length=200)
 
     def __str__(self):

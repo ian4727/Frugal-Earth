@@ -6,11 +6,8 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-#<<<<<<< HEAD
     path('aboutus/', views.aboutUs, name='aboutUs'),
     path('learn/', views.learn, name='learn'),
-#=======
-#>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
     path('home/', views.home, name='home'),
     path('signin/', views.signin, name='signin'),
     path('signout/', views.signout, name='signout'),
@@ -24,14 +21,11 @@ urlpatterns = [
     path('update-post/<str:pk>/', views.updateRoom, name='update-room'),
     path('delete-post/<str:pk>/', views.deleteRoom, name='delete-room'),
     path('delete-message/<str:pk>/', views.deleteMessage, name='delete-message'),
-#<<<<<<< HEAD
     #path('lobby', views.lobby, name='lobby'),
     path('chat', views.chat, name='chat'),
     path('report', views.report, name='report'),
 
 
-#=======
-#>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
 
 
 

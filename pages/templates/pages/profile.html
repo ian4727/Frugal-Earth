@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -217,11 +220,18 @@
 
         </body>
 </html>
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
  <title>Account</title>
+=======
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+ <title>Account</title>   
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
     <head>
       <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -250,7 +260,11 @@
             </div>
         </form>
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
 
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav  ms-auto">
@@ -263,12 +277,17 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
               </li>
+<<<<<<< HEAD
 
+=======
+             
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
               <li>
               <div>
                 {% if request.user.is_authenticated %}
                 <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signout' %}">Sign Out</a>
 
+<<<<<<< HEAD
                 {% else %}
                 <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signin' %}">Sign in</a>
 
@@ -295,11 +314,43 @@
 
               <div class="account">
 
+=======
+                {% else %} 
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signin' %}">Sign in</a>
+
+                         
+                {% endif %}
+             </div>
+             </li> 
+
+            </ul>
+
+           
+
+          </div>
+          
+        </div>
+
+       
+    </nav>
+          <!--end of navbar-->
+
+ 
+                
+            <div class="container">
+          
+              <div class="account">
+                 
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
 
 
                     <div class="account-photo">
                       <img src="{{user.avatar.url}}">
+<<<<<<< HEAD
                     </div>
+=======
+                    </div>  
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
 
                     <div class="account-info">
                         <h6>@{{user.username}}</h6>
@@ -322,6 +373,7 @@
                    <div>
                     {% include 'pages/feed_component.html' %}
                    </div>
+<<<<<<< HEAD
 
 
 
@@ -333,16 +385,38 @@
       <div class="modal-content">
 
         <!-- Modal Header
+=======
+                  
+
+            
+
+  
+    <!-- The Modal 
+     <div class="modal" id="myModalEdit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header 
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
         <div class="modal-header">
           <h6 class="modal-title">Edit Profile</h6>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
+<<<<<<< HEAD
 
         <!-- Modal body
         <div class="modal-body">
 
           <form action="" class="edit-info">
 
+=======
+  
+        <!-- Modal body 
+        <div class="modal-body">
+          
+          <form action="" class="edit-info">
+            
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
             <div class="acc-preview">
               <div class="acc-photo">
                 <img src="{% static 'image/defaultDp.jpg' %}">
@@ -351,18 +425,30 @@
                 <h6>celeste.francisco.1441</h6>
                 <small>Aaron Ojo Sales</small>
             </div>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
             </div>
 
 
 
+<<<<<<< HEAD
 
+=======
+           
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
               <div class="row">
                 <div class="col">
                   <label for="fname" class="form-label">First Name</label>
                   <input type="fname" class="form-control" id="fname" placeholder="Aaron">
                 </div><!--col
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
                 <div class="col">
                   <label for="lname" class="form-label">Last Name</label>
                   <input type="lname" class="form-control" id="lname" placeholder="Sales">
@@ -371,11 +457,19 @@
 
               <label for="username" class="form-label">Username</label>
               <input type="username" class="form-control" id="username" placeholder="celeste.francisco.1441">
+<<<<<<< HEAD
 
               <label class="form-label" for="customFile">Upload Image</label>
               <input type="file" class="form-control" id="customFile" />
 
 
+=======
+                  
+              <label class="form-label" for="customFile">Upload Image</label>
+              <input type="file" class="form-control" id="customFile" />
+            
+            
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
 
 
 
@@ -385,12 +479,21 @@
 
 
         </div>
+<<<<<<< HEAD
 
         <!-- Modal footer
         <div class="modal-footer">
           <button type="button" class="btn btn-success">Save Changes</button>
         </div>
 
+=======
+  
+        <!-- Modal footer 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success">Save Changes</button>
+        </div>
+  
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
       </div>-->
 
 
@@ -404,12 +507,19 @@
 
 
               </div>
+<<<<<<< HEAD
+
+=======
+                
+
+                  
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
 
 
 
 
 
-
+<<<<<<< HEAD
 
 
 
@@ -418,6 +528,14 @@
             </div><!--end of account-->
 
 
+=======
+ 
+            </div><!--end of container-->
+            
+            </div><!--end of account-->
+          
+    
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
 
 
 
@@ -426,4 +544,7 @@
 
         </body>
 </html>
+<<<<<<< HEAD
 
+=======
+>>>>>>> df27850890ebad90343a72d1d196edd5db0d6766
